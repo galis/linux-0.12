@@ -54,7 +54,7 @@ ata0-master: type=disk, mode=flat, path="/tmp/root-0.12.img", cylinders=410, hea
 
 参数`sysroot`,选择源码根目录。
 
-![Image](https://github.com/galis/linux-0.12/blob/master/tools/clion_remtoe_config.png)
+![Image](https://github.com/galis/linux-0.12/blob/master/tools/clion_remote_config.png)
 
 6.在main.c打断点，点击debug按钮就可以调试了
 
