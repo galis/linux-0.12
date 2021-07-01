@@ -1,0 +1,8 @@
+.idea
+cmake-build-debug
+*.o
+*.ld
+*.map
+*.bin
+*.symbol
+nohup.out

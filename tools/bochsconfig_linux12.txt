@@ -1,0 +1,26 @@
+#cpu: model=bx_generic, count=1, ips=50000000
+#cpuid: x86_64=1, mmx=1, sep=1, simd=sse4_2, apic=xapic, aes=1, movbe=1, xsave=1
+cpu: model=bx_generic, count=1, ips=50000000
+#bx_generic, pentium, pentium_mmx, amd_k6_2_chomper, p2_klamath, p3_katmai, p4_willamette, core_duo_t2400_yonah, atom_n270, p4_prescott_celeron_336, athlon64_clawhammer, athlon64_venice, turion64_tyler, phenom_8650_toliman, core2_penryn_t9600, corei5_lynnfield_750, corei5_arrandale_m520, corei7_sandy_bridge_2600k
+#cpu: model=p4_willamette, count=1, ips=50000000
+#注意'#'后面为注内容,不是配置文件
+megs:32
+
+#>>>>>>>>>>>>>>>>>>>>请根据实际情况修改下面路径
+romimage:file=/Volumes/mac-data/bochs-2.6.11/build-mac/share/bochs/BIOS-bochs-latest
+vgaromimage:file=/Volumes/mac-data/bochs-2.6.11/build-mac/share/bochs/VGABIOS-lgpl-latest
+floppya:1_44=/Volumes/mac-code/linux-0.12/Image,status=inserted
+ata0-master: type=disk, mode=flat, path="/tmp/root-0.12.img", cylinders=410, heads=16, spt=38
+#<<<<<<<<<<<<<<<<<<<<
+
+boot:floppy
+log:bochsout.txt
+mouse:enabled=0
+panic: action=ask
+error: action=report
+info: action=report
+debug: action=ignore
+
+log: /dev/tty
+
+gdbstub: enabled=1, port=1234, text_base=0, data_base=0, bss_base=0

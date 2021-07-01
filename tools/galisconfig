@@ -1,0 +1,39 @@
+#cpu: model=bx_generic, count=1, ips=50000000
+#cpuid: x86_64=1, mmx=1, sep=1, simd=sse4_2, apic=xapic, aes=1, movbe=1, xsave=1
+cpu: model=bx_generic, count=1, ips=50000000
+#bx_generic, pentium, pentium_mmx, amd_k6_2_chomper, p2_klamath, p3_katmai, p4_willamette, core_duo_t2400_yonah, atom_n270, p4_prescott_celeron_336, athlon64_clawhammer, athlon64_venice, turion64_tyler, phenom_8650_toliman, core2_penryn_t9600, corei5_lynnfield_750, corei5_arrandale_m520, corei7_sandy_bridge_2600k
+#cpu: model=p4_willamette, count=1, ips=50000000
+#注意'#'后面为注内容,不是配置文件  
+megs:32  
+#这个32是模拟器的内存  
+romimage:file=/usr/local/share/bochs/BIOS-bochs-latest  
+#这个是BIOS-bochs-latest的路径,自己去慢慢找,应该都不同的  
+vgaromimage:file=/usr/local/share/bochs/VGABIOS-lgpl-latest  
+#这个是VGABIOS-lgpl-latest的路径,自己去慢慢找,应该都不同的  
+floppya:1_44=Image,status=inserted
+#floppya:1_44=bootimage-0.11,status=inserted
+floppyb:1_44=rootimage-0.11,status=inserted
+#ata0-master: type=disk, mode=flat, path="rootimage-0.11", cylinders=520, heads=16, spt=63
+
+#这个是启动软盘,就是我们刚才做的那个,就在当前目录下  
+boot:floppy
+#这个决定boot从软盘启动还是硬盘启动,照抄就好了  
+log:bochsout.txt  
+#这个是登陆选项照抄  
+mouse:enabled=0
+#这个是鼠标选项照抄  
+#选项还有很多,想了解更多可以参照原始的.bochsrc,这是个隐形文件,命令行下ls -a就能看到了  
+#display_library:sdl
+#
+#
+#
+#
+#
+panic: action=ask
+error: action=report
+info: action=report
+debug: action=ignore
+
+log: /dev/tty
+
+gdbstub: enabled=1, port=1234, text_base=0, data_base=0, bss_base=0
