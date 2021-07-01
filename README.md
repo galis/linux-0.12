@@ -46,14 +46,19 @@ ata0-master: type=disk, mode=flat, path="/tmp/root-0.12.img", cylinders=410, hea
 
 参数`Working Directory`,选择源码根目录路径
 
+![Image](https://github.com/galis/linux-0.12/blob/master/tools/clion_shell_script.png)
+
 5.在Clion创建GDB REMOTE DEBUG配置，然后填写相关参数,，点击OK创建
 
 参数`symbol file`,选择源码编译出来的tools/system.symbol
 
 参数`sysroot`,选择源码根目录。
 
+![Image](https://github.com/galis/linux-0.12/blob/master/tools/clion_remtoe_config.png)
+
 6.在main.c打断点，点击debug按钮就可以调试了
 
+![Image](https://github.com/galis/linux-0.12/blob/master/tools/clion_debug.png)
 
 ##  4.注意事项与修改记录
 
